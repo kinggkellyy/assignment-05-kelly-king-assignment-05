@@ -67,7 +67,18 @@ def parameter(lat1, lon1, lat2, lon2):
    print(distance)
 parameter(+39.2904, -76.6122,+38.9072, -77.0369)
 
-def main (options):
-
-
-
+def main ():
+    print("Which options would you like to view ??")
+    print("Enter 1 for cash average")
+    print("Enter 2 for credit average")
+    print("Enter 3 for count of all the trips")
+    print("Enter 4 for pickup or drop off location")
+    t=input("Enter one of the options please")
+    if t==2:
+    print("credit average, average_cost_of_creditcard")
+    if t==4:
+    print("pickup or drop off loc, parameter")
+    if t==3:
+    print("count of all the trips,count_of_all_trips")
+    if t ==1:
+    print("cash average, average_cost_of_cash")
