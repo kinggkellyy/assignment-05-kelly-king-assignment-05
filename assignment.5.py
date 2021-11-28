@@ -64,9 +64,8 @@ count_of_all_trips("2016-9-1")
 #parameters function
 def parameter(lat1, lon1, lat2, lon2):
    distance = math.acos(math.sin(math.radians(lat1)) * math.sin(math.radians(lat2)) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.cos(math.radians(lon1-lon2))) * 3959
-   print(distance)
-parameter(+39.2904, -76.6122,+38.9072, -77.0369)
-
+   return distance
+#parameter(+39.2904, -76.6122,+38.9072, -77.0369)
 def main ():
     print("Which options would you like to view ??")
     print("Enter 1 for cash average")
@@ -77,9 +76,10 @@ def main ():
     if t==2:
         print("credit average",average_cost_of_creditcard())
     if t==4:
-        print("pickup or drop off loc, parameter", parameter())
+        print("pickup or drop off location", parameter(39.2904, -76.6122, 38.9072, -77.0369))
     if t==3:
-        print("count of all the trips,", count_of_all_trips())
+        date =input("Enter date please")
+        print("count of all the trips", count_of_all_trips(date))
     if t ==1:
-        print("cash average,", average_cost_of_cash())
+        print("cash average", average_cost_of_cash())
 main()
