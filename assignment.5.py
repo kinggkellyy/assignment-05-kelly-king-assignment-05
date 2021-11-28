@@ -73,12 +73,13 @@ def main ():
     print("Enter 2 for credit average")
     print("Enter 3 for count of all the trips")
     print("Enter 4 for pickup or drop off location")
-    t=input("Enter one of the options please")
+    t=int(input("Enter one of the options please"))
     if t==2:
-    print("credit average, average_cost_of_creditcard")
+        print("credit average",average_cost_of_creditcard())
     if t==4:
-    print("pickup or drop off loc, parameter")
+        print("pickup or drop off loc, parameter", parameter())
     if t==3:
-    print("count of all the trips,count_of_all_trips")
+        print("count of all the trips,", count_of_all_trips())
     if t ==1:
-    print("cash average, average_cost_of_cash")
+        print("cash average,", average_cost_of_cash())
+main()
