@@ -64,4 +64,3 @@ count_of_all_trips("2016-9-1")
 #parameters function
 def parameter(lat1, lon1, lat2, lon2):
     distance = arccos(sin(lat1) * sin(lat2) + cos(lat1) * cos(lat2) * cos(lon1 - lon2)) * 3,959 miles.
-return
