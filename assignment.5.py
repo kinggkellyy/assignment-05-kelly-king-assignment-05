@@ -112,6 +112,8 @@ def vdate(date):
             print("Incorrect year or month!")
         else:
             return date
+def outputfile(file):
+    outputfile==input("this file outputs pickup and dropoff locations")
 
 
 
