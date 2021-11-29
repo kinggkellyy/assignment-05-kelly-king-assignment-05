@@ -58,15 +58,66 @@ def count_of_all_trips(date):
    for i in the_list:
     if i[1].startswith(date,0,9) or i[2].startswith(date,0,9):
            count+= 1
-   print(count)
+   return count
 count_of_all_trips("2016-9-1")
 
 #parameters function
 def parameter(lat1, lon1, lat2, lon2):
-   distance = math.acos(math.sin(math.radians(lat1)) * math.sin(math.radians(lat2)) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.cos(math.radians(lon1-lon2))) * 3959
-   return distance
+    return math.acos(math.sin(math.radians(lat1)) * math.sin(math.radians(lat2)) + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.cos(math.radians(lon1-lon2))) * 3959
 #parameter(+39.2904, -76.6122,+38.9072, -77.0369)
-def main ():
+def vlat(num):
+    try:
+        float(num)
+    except ValueError:
+        print("Not Number")
+    if float(num) < -90 or float(num) > 90:
+        print("Sorry it is not valid!")
+    else:
+        return float(num)
+def vlong(num):
+    try:
+        float(num)
+    except ValueError:
+        print("Not Number")
+    if float(num) < -180 or float(num) > 180:
+        print("Sorry it is not valid!")
+    else:
+        return float(num)
+def vlat2(num):
+    try:
+        float(num)
+    except ValueError:
+        print("Not Number")
+    if float(num) < -90 or float(num) > 90:
+        print("Sorry it is not valid!")
+    else:
+        return float(num)
+def vlong2(num):
+    try:
+        float(num)
+    except ValueError:
+        print("Not Number")
+    if float(num) < -180 or float(num) > 180:
+        print("Sorry it is not valid!")
+    else:
+        return float(num)
+def vdate(date):
+    try:
+        date
+    except:
+        print("Not a valid date!!")
+    else:
+        if not date[0:4] == "2016" and date[5]=="9":
+            print(date[0:4], date[5])
+            print("Incorrect year or month!")
+        else:
+            return date
+
+
+
+#validationlocaiton(39.2904, -76.6122, 38.9072, -77.0369)
+
+def main():
     print("Which options would you like to view ??")
     print("Enter 1 for cash average")
     print("Enter 2 for credit average")
@@ -76,10 +127,10 @@ def main ():
     if t==2:
         print("credit average",average_cost_of_creditcard())
     if t==4:
-        print("pickup or drop off location", parameter(39.2904, -76.6122, 38.9072, -77.0369))
+        print("pickup or drop off location", parameter(vlat("39.2904"),vlong(-76.6122),vlat2(38.9072), vlong2(-77.0369)))
     if t==3:
-        date =input("Enter date please")
-        print("count of all the trips", count_of_all_trips(date))
+        date =input("Enter a date in the format of yyyy-m-d, has to be the year of 2016 and the 9th month of the year")
+        print("count of all the trips", count_of_all_trips(vdate(date)))
     if t ==1:
         print("cash average", average_cost_of_cash())
 main()
