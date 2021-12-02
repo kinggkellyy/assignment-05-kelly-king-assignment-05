@@ -20,7 +20,7 @@ def loads_data(data):
        f.close()
     #print(the_list)
     return the_list
-#loads_data('2016_09.csv')
+    loads_data('2016_09.csv')
 
 #def returns_the_distance(distance, (lat1, lon1) and (lat2, lon2)
 
@@ -58,8 +58,11 @@ def count_of_all_trips(date):
    for i in the_list:
     if i[1].startswith(date,0,9) or i[2].startswith(date,0,9):
            count+= 1
+    else:
+        break
    return count
 count_of_all_trips("2016-9-1")
+
 
 #parameters function
 def parameter(lat1, lon1, lat2, lon2):
@@ -110,16 +113,18 @@ def vdate(date):
         if not date[0:4] == "2016" and date[5]=="9":
             print(date[0:4], date[5])
             print("Incorrect year or month!")
+            return date
         else:
             return date
-def outputfile(file):
-    outputfile==input("this file outputs pickup and dropoff locations")
 
+def outputgivendistance(lon, lat):
+    ("2016-9-1")
+    #distance and locations
+    #user puts in distance, lat, and lon
 
-
-#validationlocaiton(39.2904, -76.6122, 38.9072, -77.0369)
 
 def main():
+    loads_data("2016_09.csv")
     print("Which options would you like to view ??")
     print("Enter 1 for cash average")
     print("Enter 2 for credit average")
@@ -135,4 +140,6 @@ def main():
         print("count of all the trips", count_of_all_trips(vdate(date)))
     if t ==1:
         print("cash average", average_cost_of_cash())
+
 main()
+
