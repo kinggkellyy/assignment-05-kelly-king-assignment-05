@@ -1,8 +1,8 @@
 # Programmers: [Kelly King]
 # Course: CS151, Merhi
 # Programming Assignment: 5
-# Program Inputs: [What information do you request from the user?]
-# Program Outputs: [What information do you display for the user?]
+# Program Inputs: [requesting that the users inputs information for trip calculations]
+# Program Outputs: [The information displayed is the trip calculations including credit,card,and taxi distances]
 
 import math
 import csv
